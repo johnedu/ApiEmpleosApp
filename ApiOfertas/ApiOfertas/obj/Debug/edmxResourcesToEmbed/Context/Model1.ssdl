@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_ofertas_empleoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'db_ofertas_empleo.dbo.OfertasEmpleo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="OfertasEmpleo">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Empleador" />
+      <PropertyRef Name="Titulo" />
+      <PropertyRef Name="Descripcion" />
+      <PropertyRef Name="CantidadVacantes" />
+      <PropertyRef Name="Cargo" />
+      <PropertyRef Name="FechaPublicacion" />
+      <PropertyRef Name="FechaVencimiento" />
+      <PropertyRef Name="Salario" />
+      <PropertyRef Name="Departamento" />
+      <PropertyRef Name="Municipio" />
+      <PropertyRef Name="Direccion" />
+      <PropertyRef Name="Estado" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="Empleador" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Titulo" Type="nvarchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="1024" Nullable="false" />
+    <Property Name="TiempoExperiencia" Type="nvarchar" MaxLength="50" />
+    <Property Name="CantidadVacantes" Type="int" Nullable="false" />
+    <Property Name="Cargo" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="FechaPublicacion" Type="date" Nullable="false" />
+    <Property Name="FechaVencimiento" Type="date" Nullable="false" />
+    <Property Name="NivelEstudios" Type="nvarchar" MaxLength="512" />
+    <Property Name="Profesion" Type="nvarchar" MaxLength="256" />
+    <Property Name="Salario" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Departamento" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Municipio" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="128" />
+    <Property Name="Latitud" Type="float" />
+    <Property Name="Longitud" Type="float" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="NumeroNegativos" Type="int" />
+  </EntityType>
+  <EntityContainer Name="db_ofertas_empleoModelStoreContainer">
+    <EntitySet Name="OfertasEmpleo" EntityType="Self.OfertasEmpleo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[OfertasEmpleo].[Id] AS [Id], 
+[OfertasEmpleo].[Empleador] AS [Empleador], 
+[OfertasEmpleo].[Titulo] AS [Titulo], 
+[OfertasEmpleo].[Descripcion] AS [Descripcion], 
+[OfertasEmpleo].[TiempoExperiencia] AS [TiempoExperiencia], 
+[OfertasEmpleo].[CantidadVacantes] AS [CantidadVacantes], 
+[OfertasEmpleo].[Cargo] AS [Cargo], 
+[OfertasEmpleo].[FechaPublicacion] AS [FechaPublicacion], 
+[OfertasEmpleo].[FechaVencimiento] AS [FechaVencimiento], 
+[OfertasEmpleo].[NivelEstudios] AS [NivelEstudios], 
+[OfertasEmpleo].[Profesion] AS [Profesion], 
+[OfertasEmpleo].[Salario] AS [Salario], 
+[OfertasEmpleo].[Departamento] AS [Departamento], 
+[OfertasEmpleo].[Municipio] AS [Municipio], 
+[OfertasEmpleo].[Sector] AS [Sector], 
+[OfertasEmpleo].[Latitud] AS [Latitud], 
+[OfertasEmpleo].[Longitud] AS [Longitud], 
+[OfertasEmpleo].[Direccion] AS [Direccion], 
+[OfertasEmpleo].[Estado] AS [Estado], 
+[OfertasEmpleo].[NumeroNegativos] AS [NumeroNegativos]
+FROM [dbo].[OfertasEmpleo] AS [OfertasEmpleo]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
